@@ -6,4 +6,18 @@ Windows:
   
   3. List out all the topics: \kafka_2.12-2.3.0\bin\windows> kafka-topics.bat --zookeeper 127.0.0.1:2181 --list
   4. Interacting with consumer: kafka-console-consumer.bat --bootstrap-server localhost:9092 -topic topic_name // zookeeper_name is depricated 
-  5. start producer: \kafka_2.12-2.3.0>kafka-console-producer.bat -broker-list localhost:9092 -topic TOPIC_NAME
+  5. start producer: \kafka_2.12-2.3.0\bin\windows>kafka-console-producer.bat -broker-list localhost:9092 -topic TOPIC_NAME
+  6. For Multi- Broker
+      ->Create server.properties file (You can have n number of server files)
+       And you can modify this file like.,
+          broker.id=1
+          listeners=PLAINTEXT://:9093
+          log.dir=/tmp/kafka-logs-1
+          zookeeper.connect=localhost:2181
+          
+    Now, will start 3 servers,
+    
+    Then, will create a new topic with x partitions
+    
+    Now, you can check for server details for that topics 
+          
