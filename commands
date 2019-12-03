@@ -2,5 +2,8 @@ Windows:
   1. start zookeeper: apache-zookeeper-3.5.6\bin>zkServer.cmd
   2. start kafka broker: kafka_2.12-2.3.0>.\bin\windows\kafka-server-start.bat ./config/server.properties
   
+  -> Create Topic: \kafka_2.12-2.3.0\bin\windows>kafka-topics.bat –create –zookeeper localhost:2181 –replication-factor 1 –partitions 1 –topic timemanagement_booking
+  
   3. List out all the topics: \kafka_2.12-2.3.0\bin\windows> kafka-topics.bat --zookeeper 127.0.0.1:2181 --list
   4. Interacting with consumer: kafka-console-consumer.bat --bootstrap-server localhost:9092 -topic topic_name // zookeeper_name is depricated 
+  5. start producer: \kafka_2.12-2.3.0>kafka-console-producer.bat -broker-list localhost:9092 -topic TOPIC_NAME
