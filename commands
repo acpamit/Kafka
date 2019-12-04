@@ -19,5 +19,6 @@ Windows:
     
     Then, will create a new topic with x partitions
     
-    Now, you can check for server details for that topics 
+    Now, you can check for server details for that topics by using this command:
+    kafka-topics.bat --describe --zookeeper localhost:2181 --topic topicName
           
